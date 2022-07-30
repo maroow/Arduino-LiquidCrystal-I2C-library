@@ -255,3 +255,9 @@ void LiquidCrystal_I2C::printstr(const char c[]){
 	//it's here so the user sketch doesn't have to be changed
 	print(c);
 }
+
+void LiquidCrystal_I2C::printCenter(int line, String text){
+	int startPos = (_cols - text.length())/2; 
+	setCursor(startPos, line); 
+	print(text); 
+}
